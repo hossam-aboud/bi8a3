@@ -29,14 +29,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  panorama: ^0.4.1
-  video_player: ^2.3.0
   firebase_storage: ^10.2.9
   cloud_firestore: ^3.1.10
   firebase_core: ^1.13.1
-  bloc: ^8.0.3
   flutter_bloc: ^8.0.1
-  change_app_package_name: ^1.0.0
+  video_player: ^2.3.0
+  panorama: ^0.4.1
+  shimmer: ^2.0.0
+  bloc: ^8.0.3
 
 
   # The following adds the Cupertino Icons font to your application.

@@ -1,6 +1,5 @@
-import 'dart:io';
-
 import 'package:baqa3/layout/components/build_item_home.dart';
+import 'package:baqa3/layout/components/build_loading_data.dart';
 import 'package:baqa3/layout/cubit/cubit.dart';
 import 'package:baqa3/layout/cubit/states.dart';
 import 'package:baqa3/models/data/data_model.dart';
@@ -38,19 +37,16 @@ class _HomeLayoutState extends State<HomeLayout> {
                 BuildDefaultTitleScreens(
                   titleScreen: 'بقـــــــــــاع',
                 ),
-                Positioned(
-                  top: height * 0.2,
-                  left: width * 0.2,
-                  right: width * 0.2,
-                  child: Column(
-                    children: _getBody(data: cubit.data),
-                  ),
-                ),
-                BuildDefaultElevatedButton(
-                  isCustomization: true,
-                  textBtn: 'خــروج',
-                  onPressed: () => exit(0),
-                ),
+                cubit.data.isNotEmpty
+                    ? Positioned(
+                        top: height * 0.2,
+                        left: width * 0.2,
+                        right: width * 0.2,
+                        child: Column(
+                          children: _getBody(data: cubit.data),
+                        ),
+                      )
+                    : BuildLoadingData()
               ],
             ),
           );

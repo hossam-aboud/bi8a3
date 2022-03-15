@@ -4,7 +4,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-configurationApplication() {
+configurationApplication() async {
+  await Firebase.initializeApp();
 
   // control to the status bar without using appbar
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -122,14 +123,15 @@ class DefaultBuildScaffoldBackgroundImage extends StatelessWidget {
 
 class BuildDefaultArrowBack extends StatelessWidget {
   final bool isVrMode;
-  const BuildDefaultArrowBack({Key? key, this.isVrMode = false }) : super(key: key);
+  const BuildDefaultArrowBack({Key? key, this.isVrMode = false})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return Positioned(
       left: 15.0,
-      top: !isVrMode ? height * 0.08 : height * 0.11 ,
+      top: !isVrMode ? height * 0.08 : height * 0.11,
       child: InkWell(
         onTap: () => popScreen(context: context),
         child: Icon(
