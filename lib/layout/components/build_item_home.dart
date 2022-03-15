@@ -1,4 +1,5 @@
 import 'package:baqa3/shared/styles/colors.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class BuildItemHome extends StatelessWidget {
@@ -17,7 +18,7 @@ class BuildItemHome extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 15.0),
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
         child: InkWell(
           onTap: onTap,
           child: Container(
@@ -40,10 +41,7 @@ class BuildItemHome extends StatelessWidget {
                   right: 4.0,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15.0),
-                    child: Image.network(
-                      photo,
-                      fit: BoxFit.cover,
-                    ),
+                    child: Image(image: CachedNetworkImageProvider(photo),fit: BoxFit.cover)
                   ),
                 ),
                 Positioned(

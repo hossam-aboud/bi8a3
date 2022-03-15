@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:baqa3/layout/components/build_item_home.dart';
 import 'package:baqa3/layout/components/build_loading_data.dart';
 import 'package:baqa3/layout/cubit/cubit.dart';
@@ -46,7 +48,12 @@ class _HomeLayoutState extends State<HomeLayout> {
                           children: _getBody(data: cubit.data),
                         ),
                       )
-                    : BuildLoadingData()
+                    : BuildLoadingData(),
+                BuildDefaultElevatedButton(
+                  isCustomization: true,
+                  textBtn: 'خــروج',
+                  onPressed: () => exit(0),
+                ),
               ],
             ),
           );

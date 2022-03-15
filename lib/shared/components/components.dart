@@ -1,12 +1,9 @@
 import 'package:baqa3/shared/components/constants.dart';
 import 'package:baqa3/shared/styles/colors.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-configurationApplication() async {
-  await Firebase.initializeApp();
-
+configurationApplication() {
   // control to the status bar without using appbar
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: transparentColor,
@@ -123,6 +120,7 @@ class DefaultBuildScaffoldBackgroundImage extends StatelessWidget {
 
 class BuildDefaultArrowBack extends StatelessWidget {
   final bool isVrMode;
+
   const BuildDefaultArrowBack({Key? key, this.isVrMode = false})
       : super(key: key);
 

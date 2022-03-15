@@ -1,4 +1,5 @@
 import 'package:baqa3/modules/description/components/build_description_text.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class BuildDescriptionItem extends StatelessWidget {
@@ -20,20 +21,31 @@ class BuildDescriptionItem extends StatelessWidget {
       bottom: height * 0.1,
       child: Column(
         children: [
-          Image.network(
-            photo,
-            filterQuality: FilterQuality.high,
-            fit: BoxFit.cover,
+
+       Expanded(
+         child: Image(image: CachedNetworkImageProvider(photo ,
+
+         ),
+           filterQuality: FilterQuality.high,
+           fit: BoxFit.cover,
+           height: 150.0,
+         ),
+       ),
+          // Expanded(
+          //   child: Image.network(
+          //     photo,
+          //     filterQuality: FilterQuality.high,
+          //     fit: BoxFit.cover,
+          //     height: 150.0,
+          //   ),
+          // ),
+
+          Expanded(
+            child: BuildDescriptionText(
+              descriptionText: description,
+            ),
           ),
-          Spacer(
-            flex: 1,
-          ),
-          BuildDescriptionText(
-            descriptionText: description,
-          ),
-          Spacer(
-            flex: 8,
-          ),
+
         ],
       ),
     );

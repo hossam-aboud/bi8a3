@@ -1,5 +1,6 @@
 import 'package:baqa3/models/data_of_home/data_of_home_model.dart';
 import 'package:baqa3/shared/styles/styles.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class BuildItemData extends StatelessWidget {
@@ -29,11 +30,10 @@ class BuildItemData extends StatelessWidget {
               right: 2.0,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(15.0),
-                child: Image.network(
-                  dataOfHomeModel.picture,
+                child:Image(image: CachedNetworkImageProvider(dataOfHomeModel.picture),
                   fit: BoxFit.cover,
                   filterQuality: FilterQuality.high,
-                ),
+                )
               ),
             ),
             Positioned(

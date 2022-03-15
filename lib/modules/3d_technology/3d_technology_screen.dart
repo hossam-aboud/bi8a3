@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:panorama/panorama.dart';
 
@@ -19,8 +20,8 @@ class _ThreeTechnologyState extends State<ThreeTechnology> {
     return Scaffold(
       body: Center(
         child: Panorama(
-          child: Image.network(
-            widget.three_d_mode,
+          child: Image(
+            image: CachedNetworkImageProvider(widget.three_d_mode),
             fit: BoxFit.cover,
             filterQuality: FilterQuality.high,
           ),
