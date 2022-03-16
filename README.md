@@ -1,6 +1,6 @@
 # baqa3
 
-Beqaa application, an application belonging to a Saudi company for the Android and iPhone version, through which you can learn about the historical places and the holy sites with their short description and you can watch them and get to know them through a vr video or through a 360-degree image
+Bi8a3 application, an application belonging to a Saudi company for the Android and iPhone version, through which you can learn about the historical places and the holy sites with their short description and you can watch them and get to know them through a vr video or through a 360-degree image
 
 ## Getting Started
 
