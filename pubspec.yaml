@@ -35,6 +35,7 @@ dependencies:
   firebase_core: ^1.13.1
   flutter_bloc: ^8.0.1
   video_player: ^2.3.0
+  audioplayers: ^0.20.1
   panorama: ^0.4.1
   shimmer: ^2.0.0
   bloc: ^8.0.3
@@ -76,6 +77,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/splash/
+    - assets/sound/click_btn.mp3
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

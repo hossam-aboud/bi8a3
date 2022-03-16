@@ -70,6 +70,7 @@ class BuildItemHome extends StatelessWidget {
                       title,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
+                      textDirection: TextDirection.rtl,
                       style: TextStyle(
                         color: transparentColor,
                         fontWeight: FontWeight.w900,

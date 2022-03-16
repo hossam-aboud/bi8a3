@@ -1,9 +1,23 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:baqa3/shared/components/constants.dart';
 import 'package:baqa3/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+late final AudioCache audioCache;
+
+intiSoundButton() {
+  audioCache = AudioCache(
+    prefix: 'assets/sound/',
+    fixedPlayer: AudioPlayer()..setReleaseMode(ReleaseMode.STOP),
+  );
+}
+playSound () async {
+return await  audioCache.play('click_btn.mp3');
+
+}
 configurationApplication() {
+  intiSoundButton();
   // control to the status bar without using appbar
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: transparentColor,
@@ -69,8 +83,8 @@ class BuildDefaultElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  ElevatedButton(
-      onPressed: onPressed ,
+    return ElevatedButton(
+      onPressed: onPressed,
       child: Text(
         textBtn,
         style: TextStyle(

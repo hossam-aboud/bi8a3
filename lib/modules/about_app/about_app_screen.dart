@@ -23,8 +23,8 @@ class _AboutAppScreenState extends State<AboutAppScreen> {
           DefaultBuildScaffoldBackgroundImage(),
           Positioned(
             top: height * 0.12,
-            left: 15.0,
-            right: 15.0,
+            left: 0.0,
+            right: 0.0,
             bottom: height * 0.09,
             child: Column(
               children: [
@@ -34,10 +34,13 @@ class _AboutAppScreenState extends State<AboutAppScreen> {
                 BuildDefaultElevatedButton(
                   isCustomization: true,
                   textBtn: 'دخــــول',
-                  onPressed: () => navigateTo(
+                  onPressed: () async {
+                    await playSound();
+                    navigateTo(
                     context: context,
                     screen: HomeLayout(),
-                  ),
+                  );
+                  },
                 ),
               ],
             ),

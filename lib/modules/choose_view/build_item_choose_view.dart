@@ -29,24 +29,31 @@ class BuildItemChooseView extends StatelessWidget {
           ),
           Spacer(),
           BuildElevatedButton(
-            onPressed: () => navigateTo(
-              context: context,
-              screen: VrTechnologyScreen(
-                videoPlayer: vrMode,
-              ),
-            ),
+            onPressed: () async {
+              await playSound();
+
+              navigateTo(
+                context: context,
+                screen: VrTechnologyScreen(
+                  videoPlayer: vrMode,
+                ),
+              );
+            },
             text: 'تقنية الواقع الإفتراضي',
           ),
           Spacer(
             flex: 2,
           ),
           BuildElevatedButton(
-            onPressed: () => navigateTo(
-              context: context,
-              screen: ThreeTechnology(
-                three_d_mode: threeDMode,
-              ),
-            ),
+            onPressed: () async {
+              await playSound();
+              navigateTo(
+                context: context,
+                screen: ThreeTechnology(
+                  three_d_mode: threeDMode,
+                ),
+              );
+            },
             text: 'صورة ثلاثية الأبعاد',
           ),
           Spacer(),

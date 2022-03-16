@@ -10,6 +10,7 @@ class BuildDescriptionText extends StatelessWidget {
       descriptionText,
       textAlign: TextAlign.center,
       maxLines: 4,
+      textDirection: TextDirection.rtl,
       overflow: TextOverflow.ellipsis,
       style: Theme.of(context).textTheme.bodySmall,
     );

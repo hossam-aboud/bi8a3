@@ -35,10 +35,13 @@ class _SplashScreenState extends State<SplashScreen> {
                 BuildTextApp(),
                 Spacer(),
                 BuildDefaultElevatedButton(
-                  onPressed: () => removeAllBackScreen(
-                    context: context,
-                    screen: AboutAppScreen(),
-                  ),
+                  onPressed: () async {
+                   await playSound();
+                    removeAllBackScreen(
+                      context: context,
+                      screen: AboutAppScreen(),
+                    );
+                  },
                   textBtn: 'دخــــول',
                 ),
               ],

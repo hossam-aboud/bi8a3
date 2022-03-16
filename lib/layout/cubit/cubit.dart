@@ -14,6 +14,7 @@ class Baqa3Cubit extends Cubit<Baqa3States> {
   List<DataModel> data = [];
 
   getData() {
+    data = [] ;
     emit(Baqa3GetDataLoadingState());
     FirebaseFirestore.instance.collection('data').get().then(
       (value) {

@@ -53,7 +53,11 @@ class _HomeLayoutState extends State<HomeLayout> {
                             BuildDefaultElevatedButton(
                               isCustomization: true,
                               textBtn: 'خــروج',
-                              onPressed: () => exit(0),
+                              onPressed: () async {
+                                await playSound();
+
+                                exit(0);
+                              },
                             ),
                           ],
                         ),

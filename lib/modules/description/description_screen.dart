@@ -43,13 +43,16 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                 BuildDefaultElevatedButton(
                   isCustomization: true,
                   textBtn: 'الـتــالي',
-                  onPressed: () => navigateTo(
+                  onPressed: () async {
+                    await playSound();
+                    navigateTo(
                     context: context,
                     screen: ChooseViewScreen(
                       three_d_mode: widget.dataOfHomeModel.mode_3d,
                       vr_mode: widget.dataOfHomeModel.vr_mode,
                     ),
-                  ),
+                  );
+                  },
                 ),
               ],
             ),
