@@ -22,10 +22,7 @@ class _ChooseViewScreenState extends State<ChooseViewScreen> {
       backgroundColor: Theme.of(context).primaryColor,
       body: Stack(
         children: [
-          BuildDefaultTitleScreens(
-            isCustomization: true,
-            titleScreen: 'إختر طريقة العرض',
-          ),
+
           DefaultBuildScaffoldBackgroundImage(),
           BuildItemChooseView(
             threeDMode: widget.three_d_mode,

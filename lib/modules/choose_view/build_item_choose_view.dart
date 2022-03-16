@@ -14,16 +14,19 @@ class BuildItemChooseView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Positioned(
-      top: height * 0.22,
-      left: width * 0.05,
-      right: width * 0.05,
-      bottom: height * 0.1,
+      top: height * 0.12,
+      left: 15.0,
+      right: 15.0,
+      bottom: height * 0.09,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          BuildDefaultTitleScreens(
+            isCustomization: true,
+            titleScreen: 'إختر طريقة العرض',
+          ),
           Spacer(),
           BuildElevatedButton(
             onPressed: () => navigateTo(

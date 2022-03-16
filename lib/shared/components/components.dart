@@ -45,18 +45,12 @@ class BuildDefaultTitleScreens extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    return Positioned(
-      top: !isCustomization ? height * 0.1 : height * 0.12,
-      left: 0.0,
-      right: 0.0,
-      child: Text(
-        titleScreen,
-        maxLines: 1,
-        textAlign: TextAlign.center,
-        overflow: TextOverflow.ellipsis,
-        style: Theme.of(context).textTheme.headlineLarge,
-      ),
+    return Text(
+      titleScreen,
+      maxLines: 1,
+      textAlign: TextAlign.center,
+      overflow: TextOverflow.ellipsis,
+      style: Theme.of(context).textTheme.headlineLarge,
     );
   }
 }
@@ -75,24 +69,17 @@ class BuildDefaultElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
-
-    return Positioned(
-      left: width * 0.3,
-      right: width * 0.3,
-      bottom: !isCustomization ? height * 0.1 : height * 0.055,
-      child: ElevatedButton(
-          onPressed: onPressed,
-          child: Text(
-            textBtn,
-            style: TextStyle(
-              fontWeight: FontWeight.w700,
-              color: primaryColor,
-              fontSize: 20.0,
-            ),
-          ),
-          style: Theme.of(context).elevatedButtonTheme.style),
+    return  ElevatedButton(
+      onPressed: onPressed ,
+      child: Text(
+        textBtn,
+        style: TextStyle(
+          fontWeight: FontWeight.w700,
+          color: primaryColor,
+          fontSize: 20.0,
+        ),
+      ),
+      style: Theme.of(context).elevatedButtonTheme.style,
     );
   }
 }

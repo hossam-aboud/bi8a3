@@ -58,7 +58,11 @@ var lightTheme = ThemeData(
             ),
           ),
         ),
+
       ),
+        padding:MaterialStateProperty.all<EdgeInsets>(
+          EdgeInsets.symmetric(horizontal: 40.0 , vertical: 5.0,),
+        )
     ),
   ),
 );

@@ -17,7 +17,8 @@ class BuildItemHome extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    return Padding(
+    return Expanded(
+      child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
         child: InkWell(
           onTap: onTap,
@@ -41,7 +42,10 @@ class BuildItemHome extends StatelessWidget {
                   right: 4.0,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15.0),
-                    child: Image(image: CachedNetworkImageProvider(photo),fit: BoxFit.cover)
+                    child: Image(
+                      image: CachedNetworkImageProvider(photo),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 Positioned(
@@ -71,7 +75,13 @@ class BuildItemHome extends StatelessWidget {
                         fontWeight: FontWeight.w900,
                         fontSize: 20.0,
                         shadows: [
-                          Shadow(color: whiteColor, offset: Offset(0.0, -10.0))
+                          Shadow(
+                            color: whiteColor,
+                            offset: Offset(
+                              0.0,
+                              -10.0,
+                            ),
+                          )
                         ],
                         decoration: TextDecoration.underline,
                         decorationColor: whiteColor,
@@ -83,6 +93,8 @@ class BuildItemHome extends StatelessWidget {
               ],
             ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

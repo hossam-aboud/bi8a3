@@ -12,40 +12,20 @@ class BuildDescriptionItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
-
-    return Positioned(
-      top: height * 0.25,
-      left: width * 0.05,
-      right: width * 0.05,
-      bottom: height * 0.1,
+    return Expanded(
       child: Column(
         children: [
-
-       Expanded(
-         child: Image(image: CachedNetworkImageProvider(photo ,
-
-         ),
-           filterQuality: FilterQuality.high,
-           fit: BoxFit.cover,
-           height: 150.0,
-         ),
-       ),
-          // Expanded(
-          //   child: Image.network(
-          //     photo,
-          //     filterQuality: FilterQuality.high,
-          //     fit: BoxFit.cover,
-          //     height: 150.0,
-          //   ),
-          // ),
-
-          Expanded(
-            child: BuildDescriptionText(
-              descriptionText: description,
+          Image(
+            image: CachedNetworkImageProvider(
+              photo,
             ),
+            height: height * 0.3,
+            filterQuality: FilterQuality.high,
+            fit: BoxFit.cover,
           ),
-
+          BuildDescriptionText(
+            descriptionText: description,
+          ),
         ],
       ),
     );

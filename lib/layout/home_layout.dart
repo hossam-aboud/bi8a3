@@ -27,7 +27,6 @@ class _HomeLayoutState extends State<HomeLayout> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return BlocConsumer<Baqa3Cubit, Baqa3States>(
         builder: (BuildContext context, Baqa3States state) {
           var cubit = Baqa3Cubit.get(context);
@@ -36,24 +35,30 @@ class _HomeLayoutState extends State<HomeLayout> {
             body: Stack(
               children: [
                 DefaultBuildScaffoldBackgroundImage(),
-                BuildDefaultTitleScreens(
-                  titleScreen: 'بقـــــــــــاع',
-                ),
                 cubit.data.isNotEmpty
                     ? Positioned(
-                        top: height * 0.2,
-                        left: width * 0.2,
-                        right: width * 0.2,
+                        top: height * 0.12,
+                        left: 15.0,
+                        right: 15.0,
+                        bottom: height * 0.09,
                         child: Column(
-                          children: _getBody(data: cubit.data),
+                          children: [
+                            BuildDefaultTitleScreens(
+                              titleScreen: 'بقـــــــــــاع',
+                            ),
+                            ..._getBody(data: cubit.data),
+                            SizedBox(
+                              height: height * 0.015,
+                            ),
+                            BuildDefaultElevatedButton(
+                              isCustomization: true,
+                              textBtn: 'خــروج',
+                              onPressed: () => exit(0),
+                            ),
+                          ],
                         ),
                       )
                     : BuildLoadingData(),
-                BuildDefaultElevatedButton(
-                  isCustomization: true,
-                  textBtn: 'خــروج',
-                  onPressed: () => exit(0),
-                ),
               ],
             ),
           );

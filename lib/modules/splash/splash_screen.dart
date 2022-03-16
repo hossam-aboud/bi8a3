@@ -21,14 +21,28 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Stack(
         children: [
           BuildBackgroundImage(height: height, width: width),
-          BuildLogoImage(height: height, width: width),
-          BuildTextApp(height: height),
-          BuildDefaultElevatedButton(
-            onPressed: () => removeAllBackScreen(
-              context: context,
-              screen: AboutAppScreen(),
+          Positioned(
+            top: height * 0.12,
+            left: 15.0,
+            right: 15.0,
+            bottom: height * 0.09,
+            child: Column(
+              children: [
+                BuildLogoImage(),
+                SizedBox(
+                  height: height * 0.01,
+                ),
+                BuildTextApp(),
+                Spacer(),
+                BuildDefaultElevatedButton(
+                  onPressed: () => removeAllBackScreen(
+                    context: context,
+                    screen: AboutAppScreen(),
+                  ),
+                  textBtn: 'دخــــول',
+                ),
+              ],
             ),
-            textBtn: 'دخــــول',
           ),
         ],
       ),

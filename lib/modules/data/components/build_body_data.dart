@@ -23,7 +23,7 @@ class BuildBodyData extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: _getBody(context)),
+            children: _getBody(context,),),
       ),
     );
   }
